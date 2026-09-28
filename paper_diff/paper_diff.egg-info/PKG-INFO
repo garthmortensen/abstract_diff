@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: paper-diff
+Version: 0.1.0
+Summary: Compares two research papers section by section and renders an HTML diff report.
+Requires-Python: >=3.11
+Requires-Dist: anthropic>=0.40.0
+Requires-Dist: pydantic>=2.0
+Requires-Dist: jinja2>=3.1
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"

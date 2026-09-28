@@ -1,0 +1,2 @@
+[console_scripts]
+paper-diff = paper_diff.cli:main
