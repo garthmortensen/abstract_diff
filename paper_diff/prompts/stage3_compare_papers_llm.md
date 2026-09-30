@@ -3,8 +3,9 @@ each paper's section summaries and each paper's nested assertion tree
 (`{section header: {assertions: [...]}}`). Each assertion carries a `type`, a
 verbatim `quote`, a `grounded` flag, and sometimes an `index_corrected` flag.
 
-Compare the two assertion trees and produce a JSON object with exactly
-three top-level keys: `matched`, `a_only`, `b_only`.
+Compare the two assertion trees and sort them into three lists: `matched`,
+`a_only`, `b_only`. Either paper's tree may be empty; then every assertion
+of the other paper goes in its one-sided list.
 
 - `matched`: assertions from A and B that address the same research question,
   method, data choice, assumption, finding, or conclusion, whether they agree
@@ -23,8 +24,4 @@ Each record in every list has two keys:
 
 Base every judgment only on the assertions and summaries given.
 
-Each quote goes into `evidence` as a standard JSON string: escape `"` as
-`\"` and any backslash (quotes may contain LaTeX like `\cdot`, `\times`) as
-`\\`. Use no other escaping convention.
-
-Return only the JSON document. No fences, no commentary.
+Copy each quote into `evidence` exactly as given, every character kept.

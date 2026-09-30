@@ -18,31 +18,11 @@ statement with one of these types:
 - `conclusion`
 - `claim`
 
-For each assertion, quote the exact verbatim text of the assertion from the
-block it appears in, word for word, with no paraphrasing, no ellipsis, and no
-combining text from two blocks. Record which block it came from.
+For each assertion, return:
 
-Return a YAML document shaped exactly like this, rooted at the section
-header:
-
-```yaml
-"<the section header, exactly as given>":
-  assertions:
-    - type: finding
-      $.blocks[2]: 'the exact verbatim quote from blocks[2]'
-    - type: method
-      $.blocks[5]: 'another exact verbatim quote from blocks[5]'
-```
-
-Every assertion has exactly one key besides `type`, and that key is the
-literal string `$.blocks[i]` where `i` is the block's index. The value of
-that key is the verbatim quote.
-
-Always wrap the quote value in single quotes ('...'), never double quotes,
-because quotes may contain LaTeX or other text with backslashes (for
-example `\cdot`, `\times`), and YAML double-quoted strings treat backslash
-as an escape character — single-quoted strings do not. If the quote itself
-contains a single quote character, escape it by doubling it (`''`), which is
-the only escape single-quoted YAML strings need.
-
-Return only the YAML document. No fences, no commentary.
+- `type`: one of the types above.
+- `block`: the index `i` of the block it appears in.
+- `quote`: the exact verbatim text of the assertion from that block, word
+  for word, with no paraphrasing, no ellipsis, and no combining text from
+  two blocks. Keep every character as written, including LaTeX, quotes,
+  and line breaks.

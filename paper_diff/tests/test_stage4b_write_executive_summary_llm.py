@@ -1,11 +1,12 @@
-import json
-
 import pytest
 from pydantic import ValidationError
 
 from paper_diff import llm_client_with_cache
 from paper_diff.stage4_assemble_and_validate_comparison import assemble
-from paper_diff.stage4b_write_executive_summary_llm import write_executive_summary
+from paper_diff.stage4b_write_executive_summary_llm import (
+    ExecutiveSummaryReply,
+    write_executive_summary,
+)
 
 _SUMMARY_A = {"Method": "The champion uses segment-level regression."}
 _SUMMARY_B = {"Method": "The challenger uses account-level hazards."}
@@ -71,8 +72,8 @@ def _pillar(quote: str) -> dict:
     }
 
 
-def _model_output(pillars: list[dict]) -> str:
-    return json.dumps(
+def _model_output(pillars: list[dict]) -> ExecutiveSummaryReply:
+    return ExecutiveSummaryReply.model_validate(
         {
             "headline": "Challenger adds lifetime granularity",
             "governing_thought": "The challenger adds value.",
@@ -129,13 +130,3 @@ def test_fewer_than_three_pillars_fails_validation(monkeypatch):
 
     with pytest.raises(ValidationError):
         write_executive_summary(_comparison())
-
-
-def test_fenced_json_is_accepted(monkeypatch):
-    pillars = [_pillar("discounted sum over monthly hazards")] * 3
-    fenced = "```json\n" + _model_output(pillars) + "\n```"
-    monkeypatch.setattr(llm_client_with_cache, "ask", lambda *a, **k: fenced)
-
-    summary = write_executive_summary(_comparison())
-
-    assert summary.headline == "Challenger adds lifetime granularity"

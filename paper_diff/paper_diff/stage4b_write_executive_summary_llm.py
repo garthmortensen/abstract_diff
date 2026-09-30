@@ -12,7 +12,6 @@ mirroring Stage 2c's grounding (N2).
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 from typing import Literal
@@ -60,6 +59,34 @@ class ExecutiveSummary(BaseModel):
     counts: Counts
 
 
+class EvidenceReply(BaseModel):
+    source: Literal["challenger", "champion", "both"]
+    quote: str
+    why_it_matters: str
+
+
+class PillarReply(BaseModel):
+    claim: str
+    evidence: list[EvidenceReply]
+
+
+class ExecutiveSummaryReply(BaseModel):
+    """What the model writes: `ExecutiveSummary` minus the fields Python fills in.
+
+    List-length rules live on `ExecutiveSummary`, which validates the result;
+    structured outputs can't enforce them.
+    """
+
+    headline: str
+    governing_thought: str
+    recommendation: str
+    pillars: list[PillarReply]
+    challenger_brings: list[str]
+    challenger_lacks: list[str]
+    shared_ground: str
+    who_should_care: str
+
+
 def write_executive_summary(comparison: Comparison) -> ExecutiveSummary:
     """Write the answer-first brief for a reader who will not open either paper.
 
@@ -69,8 +96,10 @@ def write_executive_summary(comparison: Comparison) -> ExecutiveSummary:
     Belongs to: Stage 4b (write executive summary).
     """
     input_text = _format_input(comparison)
-    response = llm_client_with_cache.ask(_PROMPT_FILE, input_text, max_tokens=_MAX_TOKENS)
-    parsed = json.loads(_strip_fences(response))
+    reply = llm_client_with_cache.ask(
+        _PROMPT_FILE, input_text, max_tokens=_MAX_TOKENS, schema=ExecutiveSummaryReply
+    )
+    parsed = reply.model_dump()
     parsed["counts"] = {
         "challenger_only": len(comparison.b_only),
         "champion_only": len(comparison.a_only),
@@ -111,13 +140,3 @@ def _ground_evidence(parsed: dict, pool: list[str]) -> None:
 
 def _normalize(text: str) -> str:
     return _WHITESPACE_RE.sub(" ", text).strip().lower()
-
-
-def _strip_fences(text: str) -> str:
-    stripped = text.strip()
-    if not stripped.startswith("```"):
-        return stripped
-    lines = stripped.splitlines()[1:]
-    if lines and lines[-1].startswith("```"):
-        lines = lines[:-1]
-    return "\n".join(lines)

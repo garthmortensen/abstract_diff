@@ -9,6 +9,7 @@ executive summary, render the report, render the briefs.
 from __future__ import annotations
 
 import re
+import shutil
 from pathlib import Path
 
 import yaml
@@ -39,7 +40,8 @@ def run_pipeline(paper_a_path: Path, paper_b_path: Path, output_dir: Path) -> Pa
     beside it.
     Belongs to: the pipeline entry point.
     """
-    raw_a, raw_b = paper_a_path.read_text(), paper_b_path.read_text()
+    raw_a = copy_original(paper_a_path, output_dir / "paper_a").read_text()
+    raw_b = copy_original(paper_b_path, output_dir / "paper_b").read_text()
 
     formatted_a = stage0.format_paper(raw_a)  # Stage 0 — format markdown
     formatted_b = stage0.format_paper(raw_b)
@@ -94,6 +96,15 @@ def _process_paper(formatted_md: str, paper_dir: Path) -> tuple[dict, dict]:
 
     _write(paper_dir / "summary.yaml", yaml.safe_dump(summary, sort_keys=False))
     return summary, tree
+
+
+def copy_original(source_path: Path, paper_dir: Path) -> Path:
+    """Copy a source paper to `paper_dir/original.md` and return the copy's path.
+
+    Every stage works from the copy, so the source file is only ever read.
+    """
+    paper_dir.mkdir(parents=True, exist_ok=True)
+    return Path(shutil.copyfile(source_path, paper_dir / "original.md"))
 
 
 def _slugify(header: str) -> str:

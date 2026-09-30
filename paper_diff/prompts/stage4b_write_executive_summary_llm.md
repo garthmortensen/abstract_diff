@@ -47,10 +47,3 @@ Also produce:
 
 Base every statement only on the records and summaries given. Do not invent
 numbers or facts that are not in them.
-
-Return only a JSON object with exactly these keys: `headline`,
-`governing_thought`, `recommendation`, `pillars`, `challenger_brings`,
-`challenger_lacks`, `shared_ground`, `who_should_care`. Each pillar is
-`{"claim": string, "evidence": [{"source": string, "quote": string,
-"why_it_matters": string}]}`. Escape `"` as `\"` and any backslash (quotes
-may contain LaTeX such as `\cdot`) as `\\`. No fences, no commentary.
