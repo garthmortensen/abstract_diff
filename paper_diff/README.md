@@ -153,6 +153,48 @@ Every stage also has its own subcommand that reads and writes plain files:
 `compare`, `assemble`, `brief`, `render` and `render-briefs`. Run
 `paper-diff <command> --help` for arguments.
 
+## Web UI
+
+`app.py` is a Streamlit front end for the three steps above. Tab 1 prepares
+papers, tab 2 compares two prepared papers, tab 3 shows the resulting
+`brief_decision_memo.html`. Each run is launched as a background
+`paper-diff` subprocess, so the page stays responsive during the five
+minutes a step takes, and refreshing the browser re-attaches to a run in
+progress. Progress is read from the files each stage writes under `output/`.
+
+Install Streamlit into the same environment as `paper-diff`, then start the
+app from this directory:
+
+```sh
+cd ~/garage/challenger_delta/paper_diff
+source .venv/bin/activate
+pip install -e ".[ui]"
+streamlit run app.py
+```
+
+The browser opens at http://localhost:8501. Press `Ctrl+C` in the terminal
+to stop the server; a run already started finishes on its own.
+
+Using the app:
+
+1. **Prepare papers.** Point the input folder at your sources (default
+   `../lit_md/`), tick one or more files, and give each a short name such as
+   `paper_a`. Selected papers are prepared one after another. The library
+   below lists everything under `output/papers/` and whether it is complete.
+2. **Compare.** Pick the champion and challenger from the prepared papers
+   and run. The comparison is written to `output/comparisons/<name>/`.
+3. **Decision memo.** The newest memo renders inline, with a download
+   button and a selector for earlier comparisons.
+
+The sidebar shows the model chosen by `USER_CHOICE` and warns when
+`ANTHROPIC_API_KEY` is missing. The key is read from the shell environment
+or from `.env` in this directory. A failed run can simply be started again:
+replies are cached, so it resumes where it stopped.
+
+The three wireframes the design was chosen from are still in
+`../ui_mockups/`; they run with `streamlit run ../ui_mockups/<file>.py` and
+call no pipeline code.
+
 ## Development
 
 ```sh
