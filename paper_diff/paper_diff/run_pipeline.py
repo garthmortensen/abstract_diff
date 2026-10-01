@@ -209,5 +209,5 @@ def _write(path: Path, text: str) -> None:
 
 
 if __name__ == "__main__":
-    _lit_md = Path(__file__).resolve().parent.parent / "lit_md"
-    run_pipeline(_lit_md / "champion.md", _lit_md / "challenger.md", Path("output"))
+    _staging = Path(__file__).resolve().parent.parent / "staging"
+    run_pipeline(_staging / "champion.md", _staging / "challenger.md", Path("output"))

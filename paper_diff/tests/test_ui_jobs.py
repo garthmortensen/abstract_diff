@@ -84,7 +84,7 @@ def test_list_source_files_and_names(tmp_path):
     (tmp_path / "sub").mkdir()
     assert [p.name for p in ui_jobs.list_source_files(tmp_path)] == ["a.txt", "b.md", "notes.TXT"]
     assert ui_jobs.list_source_files(tmp_path / "missing") == []
-    assert ui_jobs.default_name(Path("CECL WP-2 (final).txt")) == "CECL_WP-2_final"
+    assert ui_jobs.default_name(Path("CECL lessons (final).txt")) == "CECL_lessons_final_prepared"
     assert ui_jobs.valid_name("paper_a") and not ui_jobs.valid_name("a/b")
     assert not ui_jobs.valid_name("") and not ui_jobs.valid_name(".hidden")
 
@@ -95,12 +95,12 @@ def test_list_prepared_reports_completeness(tmp_path):
     (done / "sections" / "s1.md").write_text("x")
     (done / "sections" / "s2.md").write_text("x")
     (done / "tree.yaml").write_text("{}")
-    (done / "manifest.yaml").write_text(yaml.safe_dump({"source": "../lit_md/a.txt"}))
+    (done / "manifest.yaml").write_text(yaml.safe_dump({"source": "../staging/a.txt"}))
     (tmp_path / "paper_b").mkdir()
 
     papers = {p.name: p for p in ui_jobs.list_prepared(tmp_path)}
     assert papers["paper_a"].complete and papers["paper_a"].sections == 2
-    assert papers["paper_a"].source == "../lit_md/a.txt"
+    assert papers["paper_a"].source == "../staging/a.txt"
     assert not papers["paper_b"].complete and papers["paper_b"].source is None
     assert ui_jobs.list_prepared(tmp_path / "nope") == []
 

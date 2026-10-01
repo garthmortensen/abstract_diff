@@ -95,7 +95,7 @@ def test_existing_header_cannot_be_changed():
 
 
 def test_pipeline_copies_the_original_and_never_modifies_it(tmp_path):
-    source = tmp_path / "lit_md" / "paper.md"
+    source = tmp_path / "staging" / "paper.md"
     source.parent.mkdir()
     source.write_text("Title\n\nBody.")
     before = hashlib.sha256(source.read_bytes()).hexdigest()

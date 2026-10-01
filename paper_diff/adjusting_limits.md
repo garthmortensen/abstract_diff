@@ -29,7 +29,7 @@ error.
 
 ## Rule: the original paper is never modified
 
-The source files in `lit_md/` are read-only inputs.
+The source files in `staging/` are read-only inputs.
 
 - Today the pipeline already only reads them. It writes the formatted result
   to `output/paper_a/formatted.md` and `output/paper_b/formatted.md`.
@@ -37,7 +37,7 @@ The source files in `lit_md/` are read-only inputs.
 - Stage 0 first copies the original to `output/paper_x/original.md`.
 - Header insertion is applied to that copy. The result is written to
   `output/paper_x/formatted.md`.
-- A test hashes the file in `lit_md/` before and after a run and asserts it is
+- A test hashes the file in `staging/` before and after a run and asserts it is
   unchanged.
 
 ## Current behavior
@@ -320,7 +320,7 @@ ruff check paper_diff tests
 pytest -q
 ```
 
-Then rerun the pipeline on the current `lit_md/` papers. They're under the
+Then rerun the pipeline on the current `staging/` papers. They're under the
 limit, so Stage 3 comes from the cache and the report should match. Keep each
 new helper small enough to pass ruff's complexity limit of 8.
 

@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import argparse
 import re
-from datetime import datetime
 from pathlib import Path
 
 import yaml
@@ -39,6 +38,9 @@ _HEADER_RE = re.compile(r"^(#{1,6})\s+(.*)$", re.MULTILINE)
 # Default layout: prepared papers under one root, comparisons under another.
 PAPERS_ROOT = Path("output") / "papers"
 COMPARISONS_ROOT = Path("output") / "comparisons"
+
+# A prepared paper's default directory name is its source file's stem plus this suffix.
+PREPARED_SUFFIX = "_prepared"
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -251,7 +253,8 @@ def _add_prepare(subparsers) -> None:
     parser.add_argument(
         "--out-dir",
         type=Path,
-        help=f"directory to write this paper's artifacts into (default: {PAPERS_ROOT}/<stem>)",
+        help="directory to write this paper's artifacts into "
+        f"(default: {PAPERS_ROOT}/<stem>{PREPARED_SUFFIX})",
     )
     parser.set_defaults(handler=_cmd_prepare)
 
@@ -262,7 +265,7 @@ def _cmd_prepare(args: argparse.Namespace) -> None:
             f"error: {args.paper_md} not found (looked relative to {Path.cwd()}). "
             "Run from the paper_diff/ directory or pass an absolute path."
         )
-    out_dir = args.out_dir or PAPERS_ROOT / args.paper_md.stem
+    out_dir = args.out_dir or PAPERS_ROOT / prepared_name(args.paper_md.stem)
     paper_dir = run_pipeline.prepare_paper(args.paper_md, out_dir)
     print(f"Prepared {args.paper_md} into {paper_dir}")
 
@@ -280,7 +283,7 @@ def _add_report(subparsers) -> None:
         help=f"challenger: a prepared directory, or a bare name under {PAPERS_ROOT}",
     )
     parser.add_argument(
-        "--name", help="name for this comparison (default: output_YYYYMMDDHHMMSS, local time)"
+        "--name", help="name for this comparison (default: <champion>_vs_<challenger>)"
     )
     parser.add_argument(
         "--out-dir",
@@ -293,15 +296,29 @@ def _add_report(subparsers) -> None:
 def _cmd_report(args: argparse.Namespace) -> None:
     paper_a_dir = resolve_paper(args.paper_a)
     paper_b_dir = resolve_paper(args.paper_b)
-    name = args.name or default_comparison_name()
+    name = args.name or default_comparison_name(paper_a_dir.name, paper_b_dir.name)
     out_dir = args.out_dir or COMPARISONS_ROOT / name
     report_path = run_pipeline.compare_prepared(paper_a_dir, paper_b_dir, out_dir, name=name)
     print(f"Wrote {report_path} and brief_*.html alongside it")
 
 
-def default_comparison_name(now: datetime | None = None) -> str:
-    """`output_YYYYMMDDHHMMSS` in local time. Which papers it holds is in `manifest.yaml`."""
-    return (now or datetime.now()).strftime("output_%Y%m%d%H%M%S")
+def prepared_name(stem: str) -> str:
+    """The default prepared-paper directory name for a source file stem: `<stem>_prepared`."""
+    return f"{stem}{PREPARED_SUFFIX}"
+
+
+def default_comparison_name(champion: str, challenger: str) -> str:
+    """`<champion>_vs_<challenger>`, from the two prepared directory names.
+
+    A trailing `_prepared` is dropped from each, so `strategic_defaults_prepared` and
+    `CECL_lessons_prepared` give `strategic_defaults_vs_CECL_lessons`. Comparing the same pair
+    again reuses the name and overwrites; pass `--name` to keep both.
+    """
+    return f"{_strip_prepared(champion)}_vs_{_strip_prepared(challenger)}"
+
+
+def _strip_prepared(name: str) -> str:
+    return name.removesuffix(PREPARED_SUFFIX) or name
 
 
 def resolve_paper(arg: str) -> Path:

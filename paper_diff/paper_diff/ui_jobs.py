@@ -23,13 +23,14 @@ from pathlib import Path
 import yaml
 
 from paper_diff import stage2a_slice_paper_into_sections as stage2a
+from paper_diff.cli import prepared_name
 
 # `paper_diff/` project directory: where `output/`, `.env` and `.llm_cache/` live,
 # and the cwd the CLI expects.
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 PAPERS_ROOT = PROJECT_DIR / "output" / "papers"
 COMPARISONS_ROOT = PROJECT_DIR / "output" / "comparisons"
-DEFAULT_INPUT_DIR = PROJECT_DIR.parent / "lit_md"
+DEFAULT_INPUT_DIR = PROJECT_DIR.parent / "staging"
 
 SOURCE_SUFFIXES = {".txt", ".md"}
 MEMO_FILE = "brief_decision_memo.html"
@@ -180,9 +181,9 @@ def list_source_files(folder: Path) -> list[Path]:
 
 
 def default_name(source: Path) -> str:
-    """A filesystem-safe paper name from a source file's stem."""
+    """A filesystem-safe `<stem>_prepared` name from a source file."""
     cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", source.stem).strip("._-")
-    return cleaned or "paper"
+    return prepared_name(cleaned or "paper")
 
 
 def valid_name(name: str) -> bool:

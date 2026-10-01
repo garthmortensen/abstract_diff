@@ -3,7 +3,7 @@
 Companion to `ADR.md`, which records *why* each choice below was made. This
 document states *what* the system must do. It is derived from
 `solutions_simple_pruned.md`; the two-paper fixture referenced throughout is
-`lit_md/champion.md` (~3.6k words) and `lit_md/challenger.md` (~3.1k words).
+`staging/champion.md` (~3.6k words) and `staging/challenger.md` (~3.1k words).
 
 ## 1. Purpose
 
@@ -230,7 +230,7 @@ a hash of its input so re-runs are free.
 
 ## 6. Acceptance criteria
 
-- **A1** Running the pipeline on `lit_md/champion.md` and `lit_md/challenger.md`
+- **A1** Running the pipeline on `staging/champion.md` and `staging/challenger.md`
   produces `report.html` with no shape errors.
 - **A2** Stage 2a selects `##` for both fixture papers, yielding 12 sections for
   champion and 6 for challenger, plus a Front Matter section for challenger

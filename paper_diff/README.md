@@ -23,7 +23,7 @@ originals are only ever read. Each run copies them into the output directory.
 Comparing two papers takes three commands, run in order.
 
 First move into the `paper_diff/` directory and activate the environment.
-Every relative path below, including `../lit_md/` and `output/`, is
+Every relative path below, including `../staging/` and `output/`, is
 relative to where you run the command.
 
 ```sh
@@ -46,44 +46,49 @@ The order matters in step 3, so decide it up front.
 ### Step 1: Prepare paper A (the champion)
 
 ```sh
-paper-diff prepare ../lit_md/wp11-3.txt --out-dir output/papers/paper_a
+paper-diff prepare ../staging/strategic_defaults.txt
 ```
 
 ### Step 2: Prepare paper B (the challenger)
 
 ```sh
-paper-diff prepare ../lit_md/proposed_stress_test_model_documentation_credit_risk_models.txt \
-    --out-dir output/papers/paper_b
+paper-diff prepare ../staging/CECL_lessons.txt
 ```
 
 Replace the file paths with your own. Any text or markdown file works, with
 or without headers. Large files are fine.
 
-Each step prints `Prepared ... into output/papers/paper_x` when it finishes.
+Each step prints `Prepared ... into output/papers/<name>_prepared` when it finishes.
 If it fails partway, run the same command again. Model replies are cached in
 `.llm_cache/`, so it resumes where it stopped instead of starting over.
 
-If you leave out `--out-dir`, the paper goes to `output/papers/<file name
-without extension>/`. Giving short names like `paper_a` and `paper_b` keeps
-step 3 easy to type.
+The paper goes to `output/papers/<file name without extension>_prepared/`,
+so `strategic_defaults.txt` becomes `output/papers/strategic_defaults_prepared/`. Pass `--out-dir`
+to choose a different directory.
+
+Prepare your own file names above in place of the examples. The
+champion/challenger choice is made in step 3, not here.
 
 ### Step 3: Compare
 
 ```sh
-paper-diff report paper_a paper_b
+paper-diff report strategic_defaults_prepared CECL_lessons_prepared
 ```
 
 The first name is the champion and the second is the challenger. A bare name
 means `output/papers/<name>`. You can also pass a full path to any prepared
 directory.
 
-The result is written to a new folder named `output_YYYYMMDDHHMMSS`, using
-the local time, under `output/comparisons/`. The command prints its path.
-Open `report.html` inside it first.
+The result is written to `output/comparisons/<champion>_vs_<challenger>/`,
+here `strategic_defaults_vs_CECL_lessons`, with `_prepared` dropped from each name. The
+command prints its path. Open `report.html` inside it first.
+
+Comparing the same pair again reuses that name and overwrites the earlier
+result. Use `--name` to keep both.
 
 Options:
 
-- `--name pilot` uses `output/comparisons/pilot/` instead of the timestamp.
+- `--name pilot` uses `output/comparisons/pilot/` instead of the default name.
 - `--out-dir some/path` writes to exactly that directory.
 
 If you forgot a step, the command stops before any model call and names the
@@ -91,7 +96,7 @@ missing file.
 
 ### What you get
 
-Each prepared paper directory, such as `output/papers/paper_a/`:
+Each prepared paper directory, such as `output/papers/strategic_defaults_prepared/`:
 
 | File | Contents |
 |---|---|
@@ -103,7 +108,7 @@ Each prepared paper directory, such as `output/papers/paper_a/`:
 | `summary.yaml` | One summary per section |
 | `tree.yaml` | All assertions in section order, read by step 3 |
 
-Each comparison directory, such as `output/comparisons/output_20260930120000/`:
+Each comparison directory, such as `output/comparisons/strategic_defaults_vs_CECL_lessons/`:
 
 | File | Contents |
 |---|---|
@@ -113,7 +118,7 @@ Each comparison directory, such as `output/comparisons/output_20260930120000/`:
 | `comparison.yaml` | Full comparison data |
 | `manifest.yaml` | Which two papers were compared, which was champion, and the hash of each original |
 
-The source files in `lit_md/` are only ever read, never modified.
+The source files in `staging/` are only ever read, never modified.
 
 ### Both at once
 
@@ -178,11 +183,12 @@ to stop the server; a run already started finishes on its own.
 Using the app:
 
 1. **Prepare papers.** Point the input folder at your sources (default
-   `../lit_md/`), tick one or more files, and give each a short name such as
-   `paper_a`. Selected papers are prepared one after another. The library
+   `../staging/`), tick one or more files. Each paper is saved as its file name plus
+   `_prepared`, and the name cannot be edited. Selected papers are prepared one after another. The library
    below lists everything under `output/papers/` and whether it is complete.
 2. **Compare.** Pick the champion and challenger from the prepared papers
-   and run. The comparison is written to `output/comparisons/<name>/`.
+   and run. The name defaults to `<champion>_vs_<challenger>`, and the
+   comparison is written to `output/comparisons/<name>/`.
 3. **Decision memo.** The newest memo renders inline, with a download
    button and a selector for earlier comparisons.
 

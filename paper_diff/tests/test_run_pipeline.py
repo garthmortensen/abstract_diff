@@ -62,7 +62,7 @@ def stubbed_stages(monkeypatch):
 
 
 def _write_sources(tmp_path: Path) -> tuple[Path, Path]:
-    src = tmp_path / "lit_md"
+    src = tmp_path / "staging"
     src.mkdir()
     (src / "a.txt").write_text(_PAPER_A)
     (src / "b.txt").write_text(_PAPER_B)

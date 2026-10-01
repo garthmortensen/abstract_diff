@@ -106,18 +106,13 @@ def tab_prepare() -> None:
         st.warning("No `.txt` or `.md` files in that folder.")
 
     picked = st.multiselect("Files to prepare", [f.name for f in files])
-    names: dict[str, str] = {}
+    names = {filename: ui_jobs.default_name(folder / filename) for filename in picked}
     if picked:
-        st.caption("Short name for each paper. This becomes its folder under `output/papers/`.")
-        for filename in picked:
+        st.caption("Each paper is saved under `output/papers/` as its file name plus `_prepared`.")
+        for filename, name in names.items():
             c1, c2 = st.columns([3, 2])
             c1.markdown(f"`{filename}`")
-            names[filename] = c2.text_input(
-                "name",
-                ui_jobs.default_name(folder / filename),
-                key=f"name_{filename}",
-                label_visibility="collapsed",
-            )
+            c2.markdown(f"→ `{name}`")
 
     problems = _name_problems(names)
     for p in problems:
@@ -185,15 +180,13 @@ def tab_compare() -> None:
         challenger = st.radio(
             "Challenger (B)", [p for p in prepared if p != champion], horizontal=True
         )
-        name = st.text_input("Comparison name", default_comparison_name())
-        st.caption(
-            f"`paper-diff report {champion} {challenger} --name {name}` · about five minutes"
-        )
+        name = default_comparison_name(champion, challenger)
+        st.markdown(f"Saved as `output/comparisons/{name}/`")
+        st.caption(f"`paper-diff report {champion} {challenger}` · about five minutes")
+        if (ui_jobs.COMPARISONS_ROOT / name).exists():
+            st.warning("This pair was compared before. Running again overwrites that result.")
         busy = active("report")
-        name_ok = ui_jobs.valid_name(name)
-        if not name_ok:
-            st.error("Use letters, digits, `.`, `_` or `-` in the name.")
-        if st.button("⚖ Run comparison", type="primary", disabled=busy or not name_ok):
+        if st.button("⚖ Run comparison", type="primary", disabled=busy):
             job = ui_jobs.report_job(champion, challenger, name)
             job_registry()["report"].append(job)
             ui_jobs.run_jobs_in_background([job], ui_jobs.subprocess_env())

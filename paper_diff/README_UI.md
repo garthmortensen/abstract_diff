@@ -24,14 +24,16 @@ to stop the server. A run that has already started finishes on its own.
 ## Using it
 
 1. **Prepare papers.** Point the input folder at your sources (default
-   `../lit_md/`), tick one or more `.txt` or `.md` files, and give each a
-   short name such as `paper_a`. The name becomes the folder under
-   `output/papers/`. Selected papers are prepared one after another. The
+   `../staging/`), tick one or more `.txt` or `.md` files. Each paper is saved
+   under `output/papers/` as its file name plus `_prepared`, for example
+   `strategic_defaults_prepared`. The name is fixed and cannot be edited. Selected papers are prepared one after another. The
    library below lists everything under `output/papers/` and whether it is
    complete.
 2. **Compare.** Pick the champion (incumbent) and challenger from the
-   prepared papers, optionally change the comparison name, and run. The
-   comparison is written to `output/comparisons/<name>/`.
+   prepared papers, optionally change the comparison name, and run. The name
+   defaults to `<champion>_vs_<challenger>` with `_prepared` dropped, for
+   example `strategic_defaults_vs_CECL_lessons`. Reusing a name shows a warning and
+   overwrites. The comparison is written to `output/comparisons/<name>/`.
 3. **Decision memo.** The newest `brief_decision_memo.html` renders inline,
    with a download button and a selector for earlier comparisons. An
    expander lists the other files in that comparison folder.
