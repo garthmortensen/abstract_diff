@@ -98,9 +98,7 @@ def _front_matter_section(lines: list[str], level: int) -> Section | None:
     prefix_text = "\n".join(prefix_lines).strip()
     if not prefix_text:
         return None
-    header_lines_in_prefix = [
-        line for line in prefix_lines if _header_level(line) is not None
-    ]
+    header_lines_in_prefix = [line for line in prefix_lines if _header_level(line) is not None]
     if len(header_lines_in_prefix) == 1:
         return None
     return Section(header="Front Matter", level=0, content="\n".join(prefix_lines))

@@ -130,7 +130,10 @@ def test_call_model_streams_and_passes_schema(monkeypatch):
     text = llm_client_with_cache._call_model("prompt", "input", 64_000, _Reply)
 
     assert text == "ok"
-    assert requests[0]["output_format"] is _Reply
+    assert "output_format" not in requests[0]
+    sent = requests[0]["output_config"]["format"]
+    assert sent["type"] == "json_schema"
+    assert "quote" in sent["schema"]["properties"]
     assert requests[0]["max_tokens"] == 64_000
 
 
@@ -155,3 +158,78 @@ def test_truncation_retries_with_doubled_budget_up_to_ceiling(monkeypatch):
         llm_client_with_cache._call_model_with_retry("p", "t", 32_000, None)
 
     assert budgets == [32_000, 64_000, 128_000]
+
+
+def test_selected_model_follows_user_choice(monkeypatch):
+    monkeypatch.setattr(llm_client_with_cache, "USER_CHOICE", 2)
+    label, model_id, _ = llm_client_with_cache.selected_model()
+    assert (label, model_id) == ("Haiku 4.5", "claude-haiku-4-5-20251001")
+
+
+@pytest.mark.parametrize("bad", [0, 5, -1])
+def test_invalid_user_choice_lists_the_valid_options(monkeypatch, bad):
+    monkeypatch.setattr(llm_client_with_cache, "USER_CHOICE", bad)
+    with pytest.raises(ValueError, match="1=Sonnet 5.5, 2=Haiku 4.5, 3=Fable 5.1, 4=Opus 5.5"):
+        llm_client_with_cache.selected_model()
+
+
+def test_cache_key_changes_when_only_the_model_changes():
+    sonnet = llm_client_with_cache._cache_key("p", "i", None, "claude-sonnet-5-5")
+    haiku = llm_client_with_cache._cache_key("p", "i", None, "claude-haiku-4-5-20251001")
+    assert sonnet != haiku
+
+
+def test_choice_reaches_the_request_and_switches_the_cache(tmp_path, monkeypatch):
+    sent = []
+
+    def fake_call(prompt_text, input_text, max_tokens, schema=None):
+        sent.append(llm_client_with_cache.selected_model()[1])
+        return "reply"
+
+    monkeypatch.setattr(llm_client_with_cache, "_call_model", fake_call)
+    prompt = tmp_path / "p.md"
+    prompt.write_text("prompt")
+    for choice in (1, 1, 2):
+        monkeypatch.setattr(llm_client_with_cache, "USER_CHOICE", choice)
+        llm_client_with_cache.ask(prompt, "input", cache_dir=tmp_path / "cache")
+
+    assert sent == ["claude-sonnet-5-5", "claude-haiku-4-5-20251001"]
+
+
+def test_truncated_structured_reply_retries_instead_of_failing_to_parse(monkeypatch):
+    """A cut-off JSON reply must reach the retry, not raise a parse error mid-stream."""
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    requests = []
+    replies = iter(
+        [("max_tokens", '{"reply": "cut off in the mid'), ("end_turn", '{"reply": "ok"}')]
+    )
+
+    class _Stream:
+        def __init__(self, stop_reason, text):
+            self.message = SimpleNamespace(
+                stop_reason=stop_reason,
+                content=[SimpleNamespace(type="text", text=text)],
+            )
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def get_final_message(self):
+            return self.message
+
+    class _Messages:
+        def stream(self, **request):
+            requests.append(request)
+            return _Stream(*next(replies))
+
+    monkeypatch.setattr(
+        anthropic, "Anthropic", lambda api_key: SimpleNamespace(messages=_Messages())
+    )
+
+    text = llm_client_with_cache._call_model_with_retry("prompt", "input", 8_192, _Reply)
+
+    assert text == '{"reply": "ok"}'
+    assert [r["max_tokens"] for r in requests] == [8_192, 16_384]

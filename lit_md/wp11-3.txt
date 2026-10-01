@@ -1,0 +1,363 @@
+WORKING PAPER NO. 11-3 STRATEGIC DEFAULT ON FIRST AND SECOND LIEN MORTGAGES DURING THE FINANCIAL CRISIS
+
+Julapa Jagtiani Federal Reserve Bank of Philadelphia
+
+William W. Lang Federal Reserve Bank of Philadelphia
+
+December 9, 2010
+
+Strategic Default on First and Second Lien Mortgages During the Financial Crisis
+
+Julapa Jagtiani
+
+Special Advisor Supervision, Regulation and Credit Federal Reserve Bank of Philadelphia
+
+William W. Lang
+
+SVP and Chief Examinations Officer Supervision, Regulation and Credit Federal Reserve Bank of Philadelphia
+
+December 9, 2010 Abstract
+
+Strategic default behavior suggests that the default process is not only a matter of inability to pay. Economic costs and benefits affect the incidence and timing of defaults. As with prior research, we find that people default strategically as their home value falls below the mortgage value (exercise the put option to default on their first mortgage). While some of these homeowners default on both first mortgages and second lien home equity lines, a large portion of the delinquent borrowers have kept their second lien current during the recent financial crisis. These second liens, which are current but stand behind a seriously delinquent first mortgage, are subject to a high risk of default. On the other hand, relatively few borrowers default on their second liens while remaining current on their first. This paper explores the strategic factors that may affect borrower decisions to default on first vs. second lien mortgages. We find that borrowers are more likely to remain current on their second lien if it is a home equity line of credit (HELOC) as compared to a closed-end home equity loan. Moreover, the size of the unused line of credit is an important factor. Interestingly, we find evidence that the various mortgage loss mitigation programs also play a role in providing incentives for homeowners to default on their first mortgages.
+
+JEL Classification Codes: G28, G21, G18, G01 Key Words: Mortgage, Home Equity Loan, Default Behavior, Strategic Default, Loan Modification, Financial Crisis
+
+The authors thank Mitch Berlin, Larry Cordell, Kris Gerardi, Chris Henderson, Bob Hunt, Sougata Kerr, Andreas Lehnert, Leonard Nakamura, and participants at the Federal Reserve System Committee Conference for their comments. Special thanks to Kris Gerardi for his extensive and helpful comments, Joanne Chow for her dedicated research assistance, and to Bob Hunt for data access and support for this project. The views expressed here are those of the authors and do not necessarily represent the views of the Federal Reserve Bank of Philadelphia or the Federal Reserve System. This paper is available free of charge at www.philadelphiafed.org/research-and-data/publications/working-papers/. Please direct correspondence to Julapa Jagtiani, Federal Reserve Bank of Philadelphia, Ten Independence Mall, Philadelphia, PA 19106, Tel: 215-574-7284, e-mail: Julapa.Jagtiani@phil.frb.org.
+
+Strategic Default on First and Second Lien Mortgages During the Financial Crisis
+
+Julapa Jagtiani and William W. Lang
+
+I. Introduction
+
+The housing and mortgage crisis dramatically changed the consumer credit landscape. The sequence of a major housing price boom followed by a collapse of housing prices was accompanied by a major shift in default behavior as many households began defaulting on mortgage debt while remaining current on other forms of consumer debt (e.g., credit cards and car loans).
+
+While the change in priority of defaults between mortgage and non-mortgage debt has received a good bit of attention (see Edmans (2010), Guiso, Sapienza, and Zingales (2009), and Sapienza and Zingales (2010)), this paper focuses on an issue that has not received much attention: priority of default between first mortgages and second lien mortgages on the same home. Second lien mortgages are home equity loans that are either closed-end home equity loans (HELOANs) or home equity lines of credit (HELOCs). At first glance, it might appear that consumers (as opposed to creditors) should make no distinction between the lien positions of their mortgages, since lenders have the right to foreclose in either case. If default on either mortgage obligation results in the same eventual outcome (foreclosure), why would a consumer default on one mortgage obligation without defaulting on the other? This paper explores several hypotheses to explain actual household behavior where borrowers may strategically default on one mortgage obligation while remaining current on another.
+
+Why might households default on their first mortgage but not default on their home equity loans? One explanation for this behavior is that households do not act strategically but rather default because they are unable to make loan payments - the "inability to pay" hypothesis. Since first mortgage payments are typically much higher than payments on home equity loans, a household may be able to make the home equity payment but not the payment on the first mortgage.
+
+An alternative explanation suggests a more strategic approach to default. Some households that anticipate ultimately going to foreclosure may wish to stop paying their largest debt payment, which is typically their first mortgage payment. However, since foreclosure can be a slow process, these borrowers may decide that they are better off continuing to make their home equity payments to allow them to maintain some access to credit (e.g., unused HELOCs, unused credit card lines, additional credit card or card loans). This explanation would suggest that consumers with high unused HELOCs would be less likely to default on their home equity loans, even though they have defaulted on their first mortgage.
+
+What about borrowers who might default on their home equity loans but remain current on their first mortgage? In some cases, particularly for mortgage borrowers whose combined mortgage debt exceeds the value of the home, this would seem like a rational strategy. In order to force a borrower into foreclosure, the second lien lender must acquire the first lien. In other words, the home equity lender must take on the entire mortgage debt on the home. This is rarely a profit-maximizing strategy by the home equity lender when the household has negative equity, since the home equity lender will usually not receive any recoveries in the foreclosure process on its original second lien position. By taking over the first lien, home equity lenders would only expose themselves to additional downside risk.
+
+Given the large number of current homeowners with negative equity, there are likely a large number of borrowers who could default on their home equity loans without being forced into foreclosure if they continue to pay their first mortgage. This situation would be more likely to occur if the borrower has negative equity based on the current combined loan-to-value (CLTV) ratio and little or no equity after eliminating the home equity loan. The data indicate, however, that borrowers rarely engage in this strategy even though it appears to be viable. The last two columns of Table 1, from Goodman, Ashworth, Landy, and Yin (2010), show the degree of homes that are underwater when considering just the first lien (current LTV more than 100 percent) and when the first and second liens are combined (current CLTV more than 100 percent), respectively. Given the degree of second liens that have been underwater during the current mortgage crisis and given that second lien holders are not likely to foreclose on many of these underwater second liens, it is surprising to find that the default rate for first lien mortgages far exceeds the default rate on the second lien mortgage for the same property.
+
+Default behavior/incentive may also be affected by the foreclosure process, which varies across geographic regions. We expect less of this type of strategic default in states where the foreclosure process is shorter.
+
+This is because the home equity loan is generally small compared with the first lien. If the combined mortgage debt is less than the value of the house, then typically there is very little or no equity support for the home equity loan, and any equity support will be outweighed by costs associated with the foreclosure process. If the home equity loan is large relative to the first mortgage, then it's possible that the home equity lender can see some recoveries even when the homeowner has negative equity.
+
+This paper investigates the factors underlying the pattern of defaults between first and second lien mortgages and, in particular, why many borrowers remain current on their second lien while in default on the first mortgage. The rest of the paper is organized as follows. Section II provides a literature review on mortgage default models and consumer strategic default behavior. Sections III describes the data used for our analysis. Empirical results are presented and discussed in Section IV, which is divided into several sub-sections. We present some evidence of consumer default behavior across financial products in Section IV.1, then focus on the default behavior for mortgage products (first vs. second liens) in Section IV.2, and present some evidence of the impact from loan modification in Section IV.3. Section IV. presents mortgage default models for first mortgage and second liens (also HELOC vs. HELOAN among second liens). Finally, we investigate accounts with first mortgage default more closely and track the borrower behavior regarding their default behavior and credit score (in Section IV.5) and track any changes in the borrowers' credit line limit and utilization (in Section IV.6). Conclusions and policy implications are discussed in Section V.
+
+Note that while homeowners could default on their second lien mortgages, lower their monthly mortgage payment, and stay in the home, the loan contract stays valid and unpaid interest payments would keep accumulating. Should the house be sold in the future, the second lien creditor would be eligible for the recovery after the first lien creditor is paid in full.
+
+II. Literature and Our Contribution
+
+Mortgage Default Literature:
+
+There has been extensive research explaining mortgage defaults. This research has substantially increased in recent years as interest has been stirred by the mortgage crisis and researchers have gained access to large loan-level data sets on residential mortgages. Previous research has found several factors to be important in determining mortgage default.
+
+FICO Score: Elul (2009) finds that low FICO scores have a greater impact on subprime low-doc delinquency rates than they do on similar full-doc loans. We include FICO score at origination, the refreshed risk score from the credit bureau, as well as indicator variables for subprime and alt-A mortgage loans.
+
+Loan-to-Value (LTV) and Combined LTV (CLTV): The role of house prices and LTV ratio in mortgage default has been studied quite extensively; see, for example, Archer, Elmer, Harrison, and Ling (2002), Downing, Stanton, and Wallace (2005), Bajari, Chu, and Park (2008), Krainer, LeRoy, and Munpyung (2009). Downing, Stanton, and Wallace (2005) use a two-factor structural mortgage pricing model in which rational mortgage holders endogenously choose when to prepay and/or to default, subject to explicit frictions such as transaction costs. They find that house prices play an important role in the default decision, being both statistically and economically significant.
+
+Bajari, Chu, and Park (2008) focus on subprime mortgages, and they find that negative equity (due to the nationwide decrease in home prices) was an important driver behind subprime borrowers' decision to default during the financial crisis. Sherlund (2008) and Mayer, Pence, and Sherlund (2009) find that a combination of negative equity (LTV > 100%) and a high combined loan-to-value (CLTV) ratio together lead to more defaults. When controlling for CLTV, borrowers with piggyback second liens tend to default at a higher rate than otherwise - for example, a borrower with a 95 percent LTV on the first lien would be less likely to default than another borrower with a 95 percent CLTV (85 percent LTV on the first lien and 10 percent LTV on the piggyback second lien). We include both LTV and CLTV in our analysis. In addition, we control for the ratio of the second lien balance to the first mortgage monthly payment.
+
+Correlation Between LTV and Other Risk Factors: Elul, Souleles, Chomsisengphet, Glennon, and Hunt (2010) use credit card utilization rates as a measure of liquidity and conclude that both negative equity and illiquidity are significant in determining mortgage default and that the effect of illiquidity and negative equity are correlated. On the contrary, Krainer, LeRoy, and Munpyung (2009) find that the effect of LTV on mortgage default (using more recent data) does not interact to a major extent with other risk factors.
+
+Income and Payment-to-Income Ratio: Herzog and Earley (1970) find that borrowers with greater income variability (e.g., self-employed borrowers and salespeople) at the time of loan origination are more likely to default on their mortgages than other professionals whose income is less variable (e.g., executives). Williams, Beranek, and Kenkel (1974) find that borrowers with an initial payment-to-income ratio higher than 30 percent were significantly more likely to default. More recent studies, such as Bajari, Chu, and Park (2008), also find that higher payment-to-income ratios elevate default rates in the subprime market. In addition, Johnson and Li (2010) find that the payment-toincome ratio is a true measure of liquidity and that it is an indicator of borrowing constraints. Households with higher payment-to-income ratios are significantly more likely to be turned down for credit than other households. We include the log of the first mortgage monthly payment as a proxy for the borrower's ability to make his monthly mortgage payment.
+
+Location and Mortgage Issuer: Von Furstenberg and Green (1974) find that location of the property plays a role in mortgage default, since loans made in suburban locations are less risky. Williams, Beranek, and Kenkel (1974) find that the local unemployment rate plays a role. Titman and Tsyplakov (2010) find that mortgages that are originated by institutions with large negative stock returns in the quarters prior to the origination date tend to have higher credit spreads and are more likely to default than other mortgages with similar characteristics.
+
+Fixed-Rate Mortgage (FRM) vs. Adjustable-Rate Mortgage (ARM): Zorn and Lea (1989) examine mortgage default for FRMs vs. ARMs and find that the default risk of ARMs is higher than that of FRMs and that ARMs (by design) have the potential for higher real mortgage interest rates. Further, Cunningham and Capone (1990) examine mortgage termination behavior under various specific ARM adjustment periods and conclude that ARMs overall have a greater default risk than FRMs. Krainer, LeRoy, and Munpyung (2009) also find that high-LTV ARMs are much more prone to default than FRMs with the same LTV and that the yield premium on high-LTV ARMs is much higher than that of similar FRMs.
+
+Strategic Default Literature:
+
+Guiso, Sapienza, and Zingales (2009) estimate that 26 percent of existing mortgage defaults are strategic. Moral and social considerations appear to be an important barrier to strategic default. Guiso, Sapienza, and Zingales (2009) find that people who consider it immoral to default are 77 percent less likely to do so, and people who know someone who strategically defaulted are 82 percent more likely to default. This type of contagion results in a nonlinear increasing relationship between willingness to default and foreclosures in the same ZIP code. Moreover, as default behavior becomes more common and widely known, this could reduce the social stigma associated with strategic default.
+
+Jackson and Kesserman (1980) find support for the net-equity maximization model of default. Foster and Van Order (1984) investigate an option-based mortgage default model in which default is a put option. Borrowers would exercise the put option (i.e., default) when the value of the house plus any costs of exercising the option falls below the mortgage value.
+
+Some borrowers, however, do not default on their mortgage even with negative equity. Epperson, Kau, Keenan, and Muller (1985) argue that borrowers may be better off not defaulting now even with negative equity because, by defaulting now, the borrowers would forfeit the option to exercise their put (to default) in the future. When incorporating an estimate of LTV over time into the option-based default model, Foster and Van Order (1984) find that the model works very well in predicting mortgage default. In addition, other (transaction) costs, such as moving costs and the deterioration of the borrower's credit rating, may also play a role in the cost-benefit analysis of mortgage default. Rational borrowers would default only when the value of the collateral falls below the mortgage value by an amount equal to the net transaction costs.
+
+Unlike previous studies, this study concentrates on consumer strategic default behavior for their first mortgages vs. their second liens. The existing literature often refers to strategic default being an extreme case in which a homeowner's income is well above what is required to comfortably make payments but chooses to default because the home is a bad investment. In reality, the majority of homeowners who default are those whose income is sufficiently low so that mortgage payments are difficult but not impossible. Elul, Souleles, Chomsisengphet, Glennon, and Hunt (2010) find that mortgage borrowers default even when they have sufficient liquidity to continue paying. While these homeowners may have access to sufficient liquid assets, they may decide to default as they determine that continuing to pay the mortgage will deplete their wealth without sufficient compensation (such as avoiding bankruptcy costs or moving costs and social stigma).
+
+III. The Data
+
+Our primary source of data comes from a large random sample of individual credit records drawn at the end of each quarter from Equifax, Inc., one of the national credit bureaus. The same anonymous credit records are selected by Equifax each quarter and provided to us with sequence number and no personal identifying information. The consistent unique sequence numbers allow us to track individual credit experience over time. These data cover from the first quarter of 1999 through the first quarter of 2010 and include summary information on the credit accounts each individual maintains. The data contain balance, credit limit or loan amount, and delinquency status for first mortgages, home equity loans and lines, bank cards, auto loans, student loans, and other loan types. This study includes only consumers who have only one first mortgage and at least one second lien home equity over the period 2004:Q4 to 2010:Q2.
+
+See Quigley and Van Order (1991), Crawford and Rosenblatt (1995), and Deng, Quigley, and Van Order (2000) for more on the role of transaction costs in the option-based model for mortgage default. Also, see Quercia and Stegman (1992) for other related issues, such as factors that determine prepayment, lender's decision to foreclose, and delinquency decision (decision to delay mortgage payment).
+
+Using information from the FRB Consumer Credit Panel Data (Equifax database), we calculate additional credit characteristics: combined loan-to-value (CLTV) ratio, aggregate card utilization, HELOC line utilization, etc. When the property is jointly owned by two or more owners, we calculate total available line of credit and their usage based on the combined balances for all the joint owners, and the credit score used is the highest score of all the joint owners.
+
+We then merge the Equifax data with another database (loan-level data, updated monthly) from LPS Applied Analytics (McDash), which consists of all mortgage loans issued by nine of the top ten mortgage servicers in the U.S., covering approximately 75 percent of outstanding mortgage loans as of year-end 2009. We use a 5 percent random sample of all the loan observations, excluding loans that were originated before 2000 or have missing FICO scores at origination. The merged data sets allow us to obtain additional credit information about the borrowers and characteristics of the first mortgage loans, which are not available from the Equifax database, such as the original FICO score, original loan-to-value (LTV) ratio or down payment, original debt-to-income (DTI) ratio, and other characteristics of the loan.
+
+Following the merging approach used in Elul, Souleles, Chomsisengphet, Glennon, and Hunt (2010) and Henderson and Jagtiani (2010), we merge the LPS and Equifax data based on the following characteristics of first mortgage loans: ZIP code, open date, and initial balance. To ensure correct identification of the associated property for the purpose of calculating CLTV, we exclude borrowers with more than one first mortgage loan and those with no HELOC. By focusing on customers with only one first mortgage, we generally avoid the issue of customers defaulting on a first mortgage on one property (e.g., a vacation home) while remaining current on a second mortgage for another property (e.g., a primary residence). In this study, we focus on the issue of borrowers defaulting on one of their mortgages for their primary residence while remaining current on the other.
+
+Our data cover the period from December 2004 to June 2010, thus including both the boom (pre-crisis) and bust (post-crisis) periods. Our economic data include (state-level) home-price index (HPI) data from the Federal Housing Finance Agency (FHFA), formerly the Office of Federal Housing Enterprise Oversight (OFHEO). The HPI is a weighted repeat-sales index based on mortgage transactions on single-family properties (purchased or securitized by Fannie Mae or Freddie Mac) and within the conforming amount limits. Other economic factors are from the Haver Analytics database.
+
+IV. The Empirical Results
+
+1. Default Behavior Across Financial Products
+
+To get an overview of how default behavior has changed for different consumer products, we examine the incidence of consumer defaults in our sample across four major financial products: first mortgage, second lien home equity (HELOCs and HELOANs), credit cards, and auto loans. Our sample for this analysis includes only those customers from the merged LPS and Equifax data who have all four financial products. We observe the default information as of December 31 of each year from 2004 to 2009 across these four products.
+
+A small number of households finance a property solely with a HELOC, so it is possible that a small number of households in our sample will have first and second mortgages on different properties.
+
+Lee and Tracy (2010) find that second lien originations peaked at $100 billion per quarter in 2006 and then declined to about $10 billion as of the first quarter of 2010.
+
+Default is defined as being at least 90 days past due as of observation dates (December 31 of each year). Default on second lien home equity, credit cards, and auto loans is based on information from the Equifax database. Default information on first lien mortgages (for the same loan) is not always consistent between what was reported in the LPS and Equifax databases (probably due to different time lags, since the McDash database is updated monthly, while we receive the Equifax data quarterly). Thus, we measure first lien default in two ways: one based on McDash LPS default information and another based on the Equifax database.
+
+Figure 1 exhibits default rates for the various financial products based on data about consumers who have all four financial products: first lien mortgage, second lien mortgage of the same property (HELOAN and/or HELOC), credit cards, and automobile loan. Figure 1 demonstrates the different default rates for the same customers across the four financial products. First mortgage default based on the McDash LPS is labeled in RED, and the first mortgage default based on the Equifax database is labeled in YELLOW. The difference in the first mortgage default rates from these two sources is not large enough to change the defaulting sequence.
+
+It is evident that credit cards have the highest default rate overall, both before and during the financial crisis. Prior to the financial crisis, default rates on auto, first lien, and second lien mortgages were minimal in 2004-2005, although the default rate on first lien mortgages seemed to be slightly lower than that of second lien mortgages prior to 2006. Default rates on both first and second lien mortgages increased significantly in 2006-2007 and rose dramatically after year-end 2007. For the period 2007-2009, borrowers were most frequently defaulting in the following order: credit cards, first lien mortgage (prime and subprime), second lien home equity (HELOC & HELOAN), and auto loans.
+
+Focusing on mortgage defaults, our results indicate that the default rate for first mortgages far exceeded those of the second lien mortgages during the financial crisis. This behavior was not observed in the pre-financial crisis period (i.e., the booming period of 2004-2006). In addition, Figure 2 shows that among all second liens, the default rate is substantially lower for HELOCs than for (closed-end) HELOANs.
+
+2. Default Behavior on Mortgage Products
+
+The analysis in this section includes all the customers from the merged LPS and Equifax database who have only one first lien mortgage and at least one second lien home equity loan; these customers total 90,855. We observe the delinquency status of these customers during the period 2004 to 2009. To ensure consistency in default information, default data on both first and second liens were collected from the Equifax database.
+
+As shown in Table2, Panel A, about one-third of those borrowers who defaulted on their first lien mortgage kept their second lien mortgages current. Surprisingly, about 20 percent of borrowers in the process of foreclosure due to defaults on the first mortgage actually kept their second lien mortgage current. Among those who defaulted on their second lien mortgages, about 80 percent also defaulted on their first lien mortgage. These data seem to contradict the hypothesis that consumers would strategically default on a second lien and keep their first lien current (to reduce their monthly payment without a foreclosure). Instead, a far larger number of households do the opposite; that is, they default on their first lien (thus risking a foreclosure of their home) while keeping their underwater second lien mortgages current.
+
+The bottom two rows of Table 2, Panel A show that, given that the borrowers have defaulted on their first lien, homeowners are more likely to keep their second lien HELOC current (34.16 percent) compared to the current rate on closed-end HELOANs (24.39 percent). This evidence is consistent with a hypothesis that borrowers have incentives to keep their second lien current (after having stopped paying their first mortgage) in order to maintain their access to credit line through HELOC. We further investigate this issue below.
+
+3. Impact of Loan Modification Programs on Mortgage Defaults
+
+We examine whether there is any significant difference in default behavior among borrowers with vs. without the loan modification. Several Treasury-sponsored housing programs have been introduced during the recent crisis, including the Home Affordable Modification Program (HAMP). It is yet to be seen how successful the HAMP program is in the long run, although the outcomes so far have not been encouraging. We examine mortgage default rates separately for homeowners with vs. without loan modification, as presented in Table 2, Panels B and C.
+
+Data used for Table 2, Panel B (with loan modification) and Panel C (without loan modification) do not include 2004 observations, since there was no information on loan modification until 2005. The results suggest a positive correlation between first mortgage default and the loan modification program. For borrowers associated with loan modification, about 42 percent of those who defaulted on their first mortgages kept their second liens current. For this group of borrowers, more than 95 percent of those who defaulted on their second liens also defaulted on their first mortgage; that is, less than 5 percent kept their first lien mortgage current. Overall, we find a significant difference in default rate among borrowers with and without the mortgage loss mitigation programs.
+
+Loan modification programs may provide incentives for homeowners to default as homeowners are not likely to be approved for a modification unless they have missed their mortgage payments. In some cases, borrowers may need to be as late as 90 DPD for their accounts to be handed over to the modification department so that their loans could be renegotiated. Since most loan modifications are modifications of the first mortgage, the availability of a loan modification may provide incentives for borrowers to stop paying on their first mortgage while staying current on their second.
+
+When the loan modification status is marked as "unknown" in the LPS database, we assume that there is no loan modification. The majority of loan modification in our sample occurred in 2008 and 2009 - 2.4percent in 2005, 3.7 percent in 2006, 9.3 percent in 2007, 26.7 percent in 2008, and 57.8 percent in 2009.
+
+We investigate the role of loan modification further by examining default behavior both before and after (re-default) the modification. Focusing on modified loans only, we find that, on average, about half of these modified loans were delinquent (at least 60 DPD) prior to the start of the modification and most of them returned to the current status after the completion of modification. However, a large portion of these loans actually re-defaulted within six quarters after the modification - specifically, 47 percent of these loans became at least 60 DPD and 38 percent became at least 90 DPD within six quarters following the modification.
+
+From the supervisory viewpoint, predicting mortgage losses has become more difficult with the increase in strategic default behavior and the increase in loan modifications. Future losses will be highly dependent on whether these loan modifications are sustainable or they simply delay eventual defaults. This uncertainty is increased by the potential for strategic default behavior by the large number of borrowers with negative equity. A large portion of first mortgages with estimated LTV ratios greater than 100 percent is still current, but the continued willingness and ability of these homeowners to make their mortgage payments is subject to great uncertainty. In a recent SEC filing, J.P. Morgan Chase has noted the bank's concern about the rising tide of strategic default related to first mortgages. Similarly, losses in the home equity portfolio are closely tied to the eventual performance of first lien mortgages. If the first mortgages terminate in foreclosure, borrowers will default on the associated second lien in the vast majority of cases.
+
+4. Important Factors That Determine Mortgage Defaults
+
+This section investigates the relationship between the characteristics of the borrowers, the characteristics of their debts, and the pattern of their strategic default decisions. Our basic empirical model is a logistic model of mortgage default as written in equation (1) below:
+
+Due to our data limitation, we are not able to observe the delinquency status for some modified loans after the sample period has ended - e.g. for loan modification that occurred around the end of 2009.
+
+Prob = F (Borrower's Characteristics, Loan Characteristics, Economic Factors) -- (1) where Prob is the probability of default (or foreclosure). The various risk factors that represent characteristics of the borrowers, the loan contract, and the economic environment are listed below:
+
+First mortgage monthly payment -- Ln (Monthly 1 Paymt) - Larger monthly payment is expected to be associated with increasing delinquency rate on first mortgages. Ratio of second lien monthly payment relative to first lien monthly payment --% 2 Bal to 1 Paymt -- The larger the ratio (greater payment burden), the less likely that the second lien mortgage would be current.
+
+Log of dollar amount of credit line available (unused) from HELOC -- Ln (HELOC Line Avail) - Borrowers may have incentives to continue payments on their HELOC even after first mortgage became delinquent in order to retain their access to the credit line. Dummy variable indicating whether first lien mortgage is prime (base case), Alt-A (as indicated by D_AltA) or subprime (as indicated by D_Subprime).
+
+Ratio of credit card utilization - as a measure of the borrower's liquidity position --% Card Utilization -This is measured as a ratio of combined card balances to combined total credit lines of all the joint owners of the property. Larger credit card utilization is associated with less access to liquidity and probably less ability to make mortgage payments. Credit score based on Equifax's refreshed credit score -- Updated Risk Score. The risk score is expected to be highly related to delinquency status of the borrower. Effective loan to value (ELTV) ratio - using the original LTV ratio adjusted with home price index (HPI) at the state level. To indicate the degree of underwater for a first mortgage, an indicator variable is created, where D_ELTV >90 is equal to one if the ELTV ratio is greater than 90 percent, and zero otherwise.
+
+Effective combined loan to value (ECLTV) ratio - measures the degree of underwater for second lien mortgages as the loan amount is calculated based on first lien and second lien combined. An indicator variable is created, where D_ECLTV >90 is equal to one if the ECLTV ratio is greater than 90 percent, and zero otherwise.
+
+Other dummy indicators include whether the loan is associated with the loss mitigation programs (D_Loan Modification), whether it is a jumbo loan (D_Jumbo 1 Mortgage), whether it is an option ARM (D_Option Arm 1 Mort), whether it is a closed-end second lien (D_HELOAN) rather than a line of credit, and year dummies with 2004 being the base year (D_2005, D_2006, D_2007, D_2008, and D_2009).
+
+First Mortgage Default: Columns 1 and 2 of Table 3 show that the four most important factors that determine whether a first mortgage would be delinquent and/or foreclosed are the monthly mortgage payment amount (positive coefficient), updated risk score (negative coefficient), whether it is underwater (positive coefficient on D_ELTV>90), and whether it is associated with loan modification or other loss mitigation programs (positive coefficient). As expected, a larger monthly payment, in conjunction with negative equity, provides a real incentive for homeowners to default on the mortgage. The risk score is negatively associated with delinquency status, as expected.
+
+It is interesting to find that first mortgage default is highly associated with the loss mitigation program such as the loan modification, even after controlling for all the relevant risk factors. This finding provides support for our earlier results that the default rate for first mortgages is significantly higher for borrowers with loan modification, as shown in Panels B and C of Table 2.
+
+Surprisingly, the liquidity measure (as proxied by credit card utilization) has a significantly negative coefficient, indicating that borrowers with more access to credit (i.e., with a larger unutilized credit line) are more likely to default on their first mortgage, controlling for other risk factors. This result is consistent with the strategic default vs. inability to pay hypothesis.
+
+Finally, the significant and positive coefficients for the 2007, 2008, and 2009 year dummies suggest that the default rate for first lien mortgages was rising during the financial crisis, even after accounting for the negative equity, loan modification, and other risk factors - implying that other factors not included in the analysis (e.g., rising unemployment during the financial crisis) also play a role in rising mortgage defaults.
+
+Second Lien Default: Second mortgage default (both HELOC and HELOAN) is affected by some of the same factors related to first lien default, particularly credit score and negative equity. From columns 3 and 4 of Table 3, homeowners are more likely to default on their second lien mortgages (both HELOC and HELOAN) when the effective CLTV is greater than 90 percent. In addition to negative equity, borrowers with lower credit scores are more likely to default. Our findings are consistent with the literature that finds that negative equity is a necessary but not sufficient condition for mortgage default (or foreclosure) -- see Foote, Gerardi, Goette, and Willen (2008). Moreover, loan modification seems to increase the default rate on closed-end home equity loans (HELOANs) but has no significant impact on home equity lines of credit (HELOCs).
+
+Borrowers with more access to liquidity (smaller card utilization ratio) are more likely to default on their second liens (both HELOC and HELOAN) payments; this is inconsistent with the ability to pay hypothesis. Moreover, borrowers with a smaller second lien balance (relative to first lien payment) are more likely to default. For HELOCs (column 3), we also find that homeowners with larger credit lines available (unused) through a HELOC are less likely to default on their HELOC payments, as they are probably motivated to maintain their access to the credit line. These findings are, again, consistent with our strategic default (rather than ability to pay) hypothesis.
+
+First Mortgage Default & Second Lien Current: To further investigate consumers' mortgage default patterns during the financial crisis, we examine factors that influence homeowners' decision to default on their first lien while keeping their second lien mortgage current. The results from Table 4, column 1 show that borrowers who default on their first lien mortgage but keep their second lien current tend to have the following characteristics: larger first lien monthly payment, smaller second lien balance relative to first lien payment, negative equity, lower risk score, are subprime borrowers, and are more liquid (have more access to credit due to smaller card utilization ratio). The coefficient of the HELOAN dummy is significantly negative, indicating that this pattern of default (first lien default while keeping second lien current) is more common among borrowers with HELOCs, rather than HELOANs.
+
+In addition to the joint default decision based on the entire sample reported in column 1, we also examine important factors that determine homeowners' decision to keep their second lien payments current, given that they have already defaulted on the first mortgage (where default is defined as being at least 90 days past due). The results are reported in column 2 of Table 4. Again, we find that borrowers who decide to keep their second lien payments current are likely to have second lien HELOCs rather than HELOANs, as indicated by the significant negative coefficient of the HELOAN dummy indicator, controlling for all other relevant risk factors.
+
+5. Post-First Mortgage Default - Tracking Consumers' Default and Their Risk Score:
+
+This section investigates the default behavior on other financial products for borrowers who have defaulted on their first mortgages. In addition, we investigate whether the risk score for defaulted borrowers is updated on a timely basis to reflect their delinquency status on first mortgage. Our analysis is based on information from the quarterly Equifax database. Our sample includes all borrowers with only one first lien and at least one second lien (HELOC and/or HELOAN). We track the risk score and default rate up to three quarters after the borrowers default (60+ DPD and 90+ DPD) on their first mortgage during the period 2004:Q4 to 2010:Q2. The results are presented in Table 5.
+
+From Panel A of Table 5, more than two-thirds of the loans that became 60+ DPD remained at 60+ DPD in the following quarters, i.e., 79 percent, 70 percent, and 63 percent in the first, second, and third quarter, respectively. The rest dropped out due to refinancing, became less than 60 DPD, or due to lack of information (since we could not track performance beyond 2010:Q2).
+
+Second Lien Mortgages and Other Financial Products: Of the remaining loan observations in each quarter following the default on first mortgages, we find that 45 percent of the borrowers remain current on their second liens in the first quarter. Will these borrowers continue keep current on their second lien, or do they default on their second liens with a lag? We follow these borrowers through time, and the results indicate that the ratio of current second liens does not decline. About half of borrowers who default on their first mortgages continue to keep their second lien current at least three quarters later. In addition, an even larger percentage of these borrowers keep their credit card payments (58 percent) and auto loans (76 percent) current. The default behavior observed after the borrowers became 90+ DPD on their first mortgages shows similar results, as presented in Panel B of Table 5.
+
+Risk Score: Interestingly, we find that only about half of the borrowers who defaulted on their first mortgages had their risk score downgraded in the quarters following the default, while the other half actually had their risk score upgraded. This raises a potential question of how accurate and timely the credit risk score gets updated and reported. This is a concern particularly in the recent financial crisis period where default rates increase rapidly.
+
+6. Post-First Mortgage Default: Tracking Banks' Line Management and Utilization
+
+We found (in the previous section) that borrowers with higher unused HELOC lines were more likely to remain current on their second liens after they had defaulted on the first mortgage. We hypothesized that this behavior was due to borrowers' wishing to maintain the line of credit. The objective of this section is to investigate whether defaulted borrowers were able to maintain access to their HELOC lines after they had defaulted on their first mortgage. In other words, does bank management either cut a borrower's line of credit or curtail access to the unused HELOC line once the borrower has defaulted on the first mortgage? Based on the same data used in the previous section, Table 6 reports the changes in HELOC lines and the HELOC utilization up to three quarters following first mortgage default.
+
+Note that the number of observations for cards and auto is slightly smaller than that for first and second mortgages because some people do not have credit cards and/or auto loans.
+
+HELOC Credit Line Limit: Most of the HELOC lines were not increased or decreased after the borrowers defaulted on their first mortgages. About 90 percent of the lines remain unchanged even after three quarters following first mortgage default. It appears that bank managers infrequently reduce HELOC lines in response to a borrower's default on a first mortgage. Interestingly, a small percentage (3 to 6 percent) of these borrowers had their HELOC lines increased (rather than decreased). For those few borrowers whose HELOC line was increased, the average dollar amount of the HELOC line was raised by about 20 percent; specifically, 21 percent, 17 percent, and 23 percent increased in the first, second, and third quarter after the borrowers became 60 DPD on their first mortgages, respectively. And for those few whose HELOC lines were reduced, the dollar amount of their HELOC line was reduced by 30 percent, 28 percent, and 24 percent in the first, second, and third quarter following default on their first mortgages, respectively. These statistics for 90 DPD on first mortgages are reported in Panel B of Table 6, with similar results.
+
+HELOC Line Utilization: We now focus on those borrowers whose HELOC lines were unchanged (not increased or decreased), which account for at least 90 percent of the population. Do bank managers restrict access to these lines of credit for borrowers who defaulted on their first mortgages? If not, do borrowers quickly ramp up use of their HELOC line? We find that the average utilization ratio for these borrowers is about 90 percent at the time of first mortgage default, and the ratio does not change very much even three quarters later. In terms of the percentage of borrowers who increase or decrease their utilization rates, we find that a substantial number (20 to 30 percent) of HELOC borrowers continue to raise their utilization rates after having defaulted on their first mortgage. This suggests that a significant number of banks do not cut off access to lines for borrowers who have defaulted on their first mortgages. This may be due to the lack of timely information (e.g., updated risk score) or poor risk management practice.
+
+The data suggest heterogeneous behavior among borrowers. Approximately 27 percent of the borrowers increased their HELOC utilization ratio one quarter after being delinquent (60 DPD), followed by 23 and 24 percent of the remaining population increasing their HELOC utilization ratio in the second and third quarter, respectively. The increase in the dollar amount of HELOC utilization is, however, quite small, just under 4 percent on average. A slightly larger number of borrowers (29 percent to 34 percent) decreased their HELOC utilization ratio in the quarters following first mortgage default. The rest (about 40 percent) of the borrowers whose HELOC lines were unchanged kept their utilization ratio constant at around 91 percent to 92 percent. We find similar results for the alternative default definition (90 DPD), as presented in Panel B.
+
+V. Conclusions and Policy Implications
+
+Strategic default behavior suggests that the default process is not only a matter of inability to pay. Consumers make economic decisions that can affect the timing of defaults and which loans they repay or do not repay. Our analysis of first and second lien mortgage default behavior is consistent with strategic default behavior by some borrowers. In particular, in addition to the negative equity factor, the availability of open lines of credit seems to be an important factor in second lien default behavior.
+
+Interestingly, there is little evidence that many borrowers have decided to strategically default on second liens while maintaining payments on first mortgages. Instead, our results indicate a significant declining trend (for 2008-2009) for defaulting on the second lien while keeping the first lien current, controlling for risk characteristics of the borrowers and loan types.
+
+We also find that negative equity, proxied by LTV and/or CLTV exceeding 90 percent, has been the primary reason for homeowners to default on their mortgages overall. Negative equity is a necessary but not sufficient condition for strategic mortgage default. While some of these homeowners default on both first mortgages and second lien home equity lines, a large portion of the delinquent borrowers actually keep their second lien current. This behavior is generally more common with people who have HELOCs (rather than HELOANs) and is more common when there is a larger unused line of credit. These second liens that are current, but behind a seriously delinquent first mortgage, are subject to a high risk of default if the default on the first mortgage results in a foreclosure.
+
+Our results overall suggest that people default strategically as their home value falls below the mortgage value; they exercise the put option to default on their first mortgage. However, they tend to keep their HELOCs current in order to maintain the credit line available to them, particularly for those who have already used their credit card lines. Credit quality as reflected in the types of mortgages (prime, alt-A, or subprime) does not seem to play a significant role in determining this behavior. In addition, we find that loan modifications may increase borrowers' incentives to default on their first mortgage while remaining current on their second mortgage. Overall, our empirical findings provide a better understanding of consumer strategic default behavior and implies that current loan modification programs may have unintended consequences for consumer behavior.
+
+References
+
+Archer, W., P. Elmer, D. Harrison, and D. Ling (2002) "Determinants of Multifamily Mortgage Default," Real Estate Economics 30, 445-473.
+
+Bajari, P., C.S. Chu, and M. Park (2008) "An Empirical Model of Subprime Mortgage Default From 2000 to 2007," NBER Working Paper #14625, December.
+
+Crawford, G. and E. Rosenblatt (1995) "Efficient Mortgage Default Option Exercise: Evidence from Loss Severity," Journal of Real Estate Research, Volume 10, Number 5, 543-555.
+
+Cunningham, D. and C. Capone (1990) "The Relative Termination Experience of Adjustable to Fixed-Rate Mortgages," Journal of Finance 45, Number 5, 1687-1703.
+
+Deng, Y., J.M. Quigley, and R. Van Order (2000) "Mortgage Termination, Heterogeneity, and the Exercise of Mortgage Options," Econometrica 2, 275-307.
+
+Downing, C., R. Stanton, and N. Wallace (2005) "An Empirical Test of a Two-Factor Mortgage Valuation Model: How Much Do House Prices Matter?" Real Estate Economics, Volume 33, Number 3.
+
+Edmans, A. (2010) "The Responsible Homeowner Reward: An Incentive-Based Solution to Strategic Mortgage Default," The Wharton School, University of Pennsylvania, Working Paper, July.
+
+Elul, R. (2009) "Securitization and Mortgage Default: Reputation vs. Adverse Selection," Federal Reserve bank of Philadelphia, Working Paper #09-21, September.
+
+Elul, R., N. Souleles, S. Chomsisengphet, D. Glennon, and R. Hunt (2010) "What 'Triggers' Mortgage Default," Federal Reserve Bank of Philadelphia, Working paper No. 10-13, April.
+
+Epperson, J., J. Kau, D. Keenan, and W. Muller (1985) "Pricing Default Risk in Mortgages," AREUEA Journal 13, Number 3, 152-167.
+
+Foote, C., K, Gerardi, L. Goette, and P. Willen (2008) "Negative Equity and Foreclosure: Theory and Evidence," Journal of Urban Economics 64, Number 2, 234-245.
+
+Foster, C. and R. Van Order (1984) "An Option Based Model of Mortgage Default," Housing and Finance Review 3, Number 4, 351-372.
+
+Goodman, L., R. Ashworth, B. Landy, and K. Yin (2010) "Second Liens: How Important?" The Journal of Fixed Income 20, Number 2, Fall, 19-30.
+
+Guiso, L., P. Sapienza, and L. Zingales (2009) "Moral and Social Constraints to Strategic Default on Mortgages," University of Chicago and Northwestern University, Working Paper, July.
+
+Henderson, C. and J. Jagtiani (2010) "Can Banks Circumvent Minimum Capital Requirements? The Case of Mortgage Portfolios Under Basel II," Federal Reserve Bank of Philadelphia, Working paper # 10-17, May.
+
+Herzog, J.P. and J.S. Earley (1970) "Home Mortgage Delinquency and Foreclosure," NBER Working Paper.
+
+Jackson, J. and D. Kesserman (1980) "Default Risk on Home Mortgage Loans: A Test of Competing Hypotheses," Journal of Risk and Insurance 3, Number 3, 678-690.
+
+Johnson, K.W. and G. Li (2010) "The Debt-Payment-to-Income Ratio as an Indicator of Borrowing Constraints: Evidence from Two Household Surveys," Journal of Money, Credit, and Banking 42, Number 7, October, 1373-1390.
+
+Krainer, J., S. LeRoy, and O. Munpyung (2009) "Mortgage Default and Mortgage Valuation," Federal Reserve Bank of San Francisco, Working Paper, November.
+
+Lee, D. and J. Tracy (2010) "Taking a First Look at Seconds," Federal Reserve Bank of New York, Presentation, June 10.
+
+Mayer, C., K. Pence, and S. Sherlund (2009) "The Rise in Mortgage Defaults," Journal of Economic Perspectives, Volume 23, Number 1, Winter, 27-50.
+
+Posner, E. and L. Zingales (2009) "A Loan Modification Approach to the Housing Crisis," American Law and Economics Review 11, 575-607.
+
+Quercia, R. and M. Stegman (1992) "Residential Mortgage Default: A Review of the Literature," Journal of Housing Research, Volume 3, Number 2, 341-379.
+
+Quigley, J.M. and R. Van Order (1991) "Defaults on Mortgage Obligations and Capital Requirements for U.S. Savings Institutions: A Policy Perspective," Journal of Public Economics 44, Number 3, 353-370.
+
+Sapienza, P. and L. Zingales (2010) "Financial Trust Index: The Results - Wave VI," University of Chicago Booth School of Business and Northwestern University Kellogg School of Business.
+
+Sherlund, S. (2008) "The Past, Present, and Future of Subprime Mortgages," Finance and Economic Discussion Series 2008-63, Federal Reserve Board.
+
+Titman, S. and S. Tsyplakov (2010) "Originator Performance, CMBS Structures, and the Risk of Commercial Mortgages," The Review of Financial Studies 23, Number 9, 3558-3594.
+
+Von Furstenberg, G. and R.J. Green (1974) "Home Mortgages Delinquency: A Cohort Analysis," Journal of Finance 29, December, 1545-1548.
+
+Williams, A.O., W. Beranek, and J. Kenkel (1974) "Default Risk in Urban Mortgages: A Pittsburgh Prototype Analysis," AREUEA Journal 2, Number 2, 101-102.
+
+Zorn, P. and M. Lea (1989) "Mortgage Borrower Repayment Behavior: A Microeconomic Analysis with Canadian Adjustable Rate Mortgage Data," AREUEA Journal 17, Number 1, 118-136.
+
+Table 1 Rising Current LTV and Contribution of Second Liens to Current CLTV Exceeding 100%
+
+Product	Lien Type	Original LTV (%)	Current LTV (%)	Current CLTV (%)
+Prime	Single Lien Second Lien Paid Off Simultaneous Second Lien Single Lien with Subsequent Higher Lien Simultaneous Second with Subsequent Higher Lien Single Lien & Subsequent Lien Data Missing Simultaneous Second & Subsequent Lien Data Missing	69 68 76 69 72 67 71	88 87 105 83 94 74 89	88 87 124 109 123
+Alt A	Single Lien Second Lien Paid Off Simultaneous Second Lien Single Lien with Subsequent Higher Lien Simultaneous Second with Subsequent Higher Lien Single Lien & Subsequent Lien Data Missing Simultaneous Second & Subsequent Lien Data Missing	72 72 78 72 76 72 77	106 106 121 99 109 94 113	106 106 147 129 145
+Option ARM	Single Lien Second Lien Paid Off Simultaneous Second Lien Single Lien with Subsequent Higher Lien Simultaneous Second with Subsequent Higher Lien Single Lien & Subsequent Lien Data Missing Simultaneous Second & Subsequent Lien Data Missing	76 74 78 74 76 75 77	140 129 148 127 137 129 138	140 129 169 153 165
+Subprime	Single Lien Second Lien Paid Off Simultaneous Second Lien Single Lien with Subsequent Higher Lien Simultaneous Second with Subsequent Higher Lien Single Lien & Subsequent Lien Data Missing Simultaneous Second & Subsequent Lien Data Missing	81 79 80 79 79 81 80	121 116 125 112 116 106 119	121 116 155 142 157
+
+Source: Goodman, Ashworth, Landy, and Yin (2010)
+
+Table 2:
+
+Default Frequency - Comparing First Lien vs. Second Lien Defaults Date Period: 2004 to 2009
+
+Note: Information for both first lien default and second lien default comes from the Equifax database. Sample includes customers with only one first mortgage and at least one second lien mortgage (either HELOC or HELOAN).
+
+Panel A: Both With and Without Loan Modification - Total 93,198 Borrowers.
+
+Defaulted on First Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 2,548 33,14	Second Lien Current 30.97% 34.76%	Second Lien Not Current (30+ DPD) 69.03% 65.24%
+Defaulted on Second Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 2,040 2,542	First Lien Current 20.20% 20.26%	First Lien Not Current (30+ DPD) 79.80% 79.74%
+Property Under Foreclosure:	Observation Number 927	Second Lien Current 19.96%	Second Lien Not Current (30+ DPD) 80.04%
+Defaulted on First Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 1,168 1,498	HELOC Current 34.16% 37.98%	HELOC Not Current (30+ DPD) 65.84% 62.02%
+Defaulted on First Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 1,181 1,557	HELOAN Current 24.39% 27.94%	HELOAN Not Current (30+ DPD) 75.61% 72.06%
+
+Table 2 (Continued) Default Frequency - Comparing First Lien vs. Second Lien Defaults Impact of Loan Modification Programs Data Period: 2005 to 2009
+
+Panel B: Borrowers With Loan Modification Only (2005-2009) - Total 816 Borrowers.
+
+Defaulted on First Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 339 405	Second Lien Current 41.30% 42.47%	Second Lien Not Current (30+ DPD) 58.70% 57.53%
+Defaulted on Second Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 183 221	First Lien Current 3.83% 4.52%	First Lien Not Current (30+ DPD) 96.17% 95.48%
+Property Under Foreclosure:	Observation Number 99	Second Lien Current 22.22%	Second Lien Not Current (30+ DPD) 77.78%
+
+Panel C: Borrowers Without Loan Modification Only (2005-2009) - Total 82,574 Borrowers. Note that this includes all loans with unknown modification status.
+
+Defaulted on First Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 2,187 2,868	Second Lien Current 29.26% 33.37%	Second Lien Not Current (30+ DPD) 70.74% 66.63%
+Defaulted on Second Liens: Default Defined as 90+ DPD Default Defined as 60+ DPD	Observation Number 1,822 2,278	First Lien Current 21.08% 20.98%	First Lien Not Current (30+ DPD) 78.92% 79.02%
+Property Under Foreclosure:	Observation Number 817	Second Lien Current 19.22%	Second Lien Not Current (30+ DPD) 80.78%
+
+Table 3: Important Factors That Determine Mortgage Defaults
+
+Data period 2004-2009. Both first lien default and second lien default are from the Equifax database. P-values are presented in parentheses. *,, and * represents significance at the 1%, 5%, and 10% level, respectively.
+
+Full Sample (1)	Full Sample (2)	Borrowers With 1st and HELOC (3)	Borrowers With 1st and HELOAN (4)
+Prob(1st Lien 90+ DPD)	Prob(1st Lien Foreclosed)	Prob(2nd HELOC 90+)	Prob(2nd HELOAN 90+)
+Intercept Ln (Monthly 1st Paymt) % 2nd Bal to 1st Paymt Ln (HELOC Line Avail) D AltA _ D Subprime _ % Card Utilization _ Updated Risk Score D ELTV >90 _ D ECLTV >90 _ D Loan Modification _ D Jumbo 1st Mortgage _ D Option Arm 1st Mort _ D 2005 _ D 2006 _ D 2007 _ D 2008 _ D 2009 _	2.5247*** (0.0001) 0.7657*** (0.0001) -- -- -0.1438** (0.0271) -0.2071** (0.0249) -0.0055*** (0.0001) -0.0207*** (0.0001) 0.8926*** (0.0001) -- 1.9398*** (0.0001) -0.0229 (0.8090) -0.5454*** (0.0001) -0.1562 (0.5618) 0.3634 (0.1415) 0.7092*** (0.0030) 1.2094*** (0.0001) 2.1787*** (0.0001)	3.4940*** (0.0001) 0.2765*** (0.0002) -- -- -0.0773 (0.4213) -0.3008** (0.0298) -0.0059*** (0.0001) -0.0177*** (0.0001) 0.8617*** (0.0001) -- 0.7829*** (0.0001) 0.3694*** (0.0055) -0.3836*** (0.0001) -0.4048 (0.2775) 0.5097 (0.1117) 0.7020** (0.0242) 0.7714** (0.0125) 1.1727*** (0.0001)	7.9713*** (0.0001) -- -0.0037*** (0.0034) -0.1238*** (0.0001) -0.1997** (0.0273) -0.6416*** (0.0002) -0.0092*** (0.0001) -0.0197*** (0.0001) -- 0.5005*** (0.0001) 0.0447 (0.8234) -- -- -0.2254 (0.5052) 0.2657 (0.3970) 0.7320** (0.0137) 1.2026*** (0.0001) 2.0235*** (0.0001)	6.5120*** (0.0001) -- -0.0083*** (0.0001) -- -0.1315 (0.1919) -0.1252 (0.3048) -0.0057*** (0.0001) -0.0175*** (0.0001) -- 0.6913*** (0.0001) 0.7953*** (0.0001) -- -- 0.0764 (0.7878) -0.0029 (0.9911) 0.3400 (0.1892) 0.7243*** (0.0047) 1.2822*** (0.0001)
+Observation (N) Concordant Discordant	201,824 98.6% 1.1%	201,824 97.0% 1.5%	144,955 97.5% 1.3%	47,419 96% 3.6%
+
+Table 4: Important Factors in Keeping Second Lien Current After First Lien Is Delinquent (90+ DPD)
+
+Data period 2004-2009. Second liens include both HELOCs and HELOANs. Both first lien default and second lien default are from the Equifax database. P-values are presented in parentheses. *,, and * represents significance at the 1%, 5%, and 10% level, respectively.
+
+Full Sample	Include Borrowers Who Default on 1st Lien ONLY
+Prob(2nd Lien Current, 1st Lien 90+ DPD) (1)	Prob(2nd Lien Current) (2)
+Intercept Ln (Monthly 1st Paymt) % 2nd Bal to 1st Paymt Ln (HELOC Line Avail) D AltA _ D Subprime _ % Card Utilization _ Updated Risk Score D ELTV >90 _ D ECLTV >90 _ D HELOAN _ D 2005 _ D 2006 _ D 2007 _ D 2008 _ D 2009 _	1.1213* (0.0683) 0.3110*** (0.0001) -0.0052*** (0.0004) -0.0297*** (0.0031) -0.0079 (0.9285) 0.3510*** (0.0046) -0.0034*** (0.0090) -0.0146*** (0.0001) -- 0.3039*** (0.0003) -0.5746*** (0.0001) -0.0222 (0.9510) 0.2753 (0.4168) 0.4693 (0.1511) 1.2354*** (0.0001) 2.3922*** (0.0001)	-5.1114*** (0.0001) -- -0.0019 (0.2272) 0.0177 (0.1841) 0.1793 (0.1132) 0.8626*** (0.0001) 0.0036*** (0.0082) 0.0109*** (0.0001) -- -0.6928*** (0.0001) -0.5088*** (0.0001) -0.1339 (0.8074) -0.8332* (0.0988) -0.9857** (0.0427) -0.8307* (0.0815) -0.4953 (0.2973)
+Observation (N) Concordant Discordant	201,824 96.5% 2.1%	2,383 74.2% 25.5%
+
+Table 5: Consumer Default Across Financial Products After the First Mortgage
+
+Delinquency. Quarterly Data Period 2004:Q4 to 2010:Q2 Panel A: First Mortgage 60 Days Past Due
+
+1st Mortgage Becoming 60 DPD	+1Q 150 DPD	+2Q 240 DPD	+3Q 330 DPD
+First Mortgage (N) % Loans That Remain 60+ DPD	8406 100%	5765 79%	4145 70%	3049 63%
+Second Lien (N) % Current (For Remaining Loans) Credit Cards (N) % Current (For Remaining Loans) Automobile (N) % Current (For Remaining Loans)	8406 45% 7644 58% 5078 76%	5765 46% 5177 56% 3368 77%	4145 51% 3642 56% 2393 77%	3049 53% 2637 57% 1757 75%
+Risk Score (Change From Previous Quarter): % Increase % Decrease % Unchanged	8406	5765 41% 57% 2%	3962 54% 44% 3%	2897 54% 43% 4%
+
+Panel B: First Mortgage 90 Days Past Due
+
+1st Mortgage Becoming 90 DPD	+1Q 180 DPD	+2Q 270 DPD	+3Q 360 DPD
+First Mortgage (N) % Loans That Remain 90+ DPD	6938 100%	4484 82%	3061 70%	2101 65%
+Second Lien (N) % Current (For Remaining Loans) Card (N) % Current (For Remaining Loans) Auto (N) % Current (For Remaining Loans)	6938 38% 6232 56% 4106 75%	4484 42% 3955 54% 2554 76%	3061 47% 2644 55% 1716 75%	2101 50% 1787 56% 1171 75%
+Risk Score (Change From Previous Quarter): % Increase % Decrease % Unchanged	6938	4484 47% 51% 2%	2900 56% 41% 3%	2016 55% 41% 4%
+
+Table 6: HELOC Line Management and HELOC Utilization After Default on First
+
+Mortgages -- Quarterly Data (2004:Q4 to 2010:Q2) Panel A: First Mortgages 60 Days Past Due
+
+1st Mortgage Becoming 60 DPD	+1Q 150 DPD	+2Q 240 DPD	+3Q 330 DPD
+% Loans That Remain 60+ DPD	8406 100%	5765 79%	4145 70%	3049 63%
+HELOC Line: % Increase % Decrease % Unchanged	4772	3320 3% -4% 92%	2322 5% -5% 90%	1688 3% -4% 92%
+HELOC Line: % $ Increase % $ Decrease	4772	3320 21% -30%	2322 17% -28%	1688 23% -24%
+HELOC Line UNCHANGED (N): Average Utilization Ratio % Utilization Up % Utilization Down % $ Increased (Utilization Up) % $ Decreased (Utilization Down)	4772 90%	3066 91% 27% -29% 2.6% -3.6%	2085 89% 23% -34% 2.7% -2.9%	1558 87% 24% -33% 3.9% -4.3%
+
+Panel B: First Mortgages 90 Days Past Due
+
+1st Mortgage Becoming 90 DPD	+1Q 180 DPD	+2Q 270 DPD	+3Q 360 DPD
+% Loans That Remain 90+ DPD	6938 100%	4484 82%	3061 70%	2101 65%
+HELOC Line: % Increase % Decrease % Unchanged	3947	2617 4% -6% 90%	1725 6% -6% 89%	1203 4% -4% 91%
+HELOC Line: % $ Increase % $ Decrease	3947	2617 14% -28%	1725 18% -26%	1203 25% -34%
+HELOC Line UNCHANGED (N): Average Utilization Ratio % Utilization Up % Utilization Down % $ Increased (Utilization Up) % $ Decreased (Utilization Down)	3947 91%	2347 90% 26% -28% 2.6% -4.2%	1532 89% 21% -32% 4.2% -4.1%	1099 88% 23% -32% 3.2% -2.5%
+
+Figure 1: Default Rate Across Financial Products
+
+Default Defined as 90+ Days Past Due
+
+Auto 90 days+ 2nd Lien 90 days+ 1st Lien 90 days 1st Lien 90 days+ (McDash) Card 90 days +
+
+Figure 2: Second Lien Default (90+ DPD) HELOAN vs. HELOC
+
+HELoan HELOC

@@ -1,4 +1,7 @@
-"""Thin argparse wrapper: one subcommand per stage, plus `run`.
+"""Thin argparse wrapper: one subcommand per stage, plus `prepare`, `report` and `run`.
+
+`prepare` runs the per-paper half of the pipeline on a single file, `report`
+runs the pair-wise half on two prepared directories, and `run` does both.
 
 Every subcommand reads plain markdown or YAML from disk and writes plain
 markdown or YAML back to disk, so any stage can be run and inspected on its
@@ -11,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import re
+from datetime import datetime
 from pathlib import Path
 
 import yaml
@@ -31,6 +35,10 @@ from paper_diff import stage5b_render_executive_briefs as stage5b
 from paper_diff.stage2a_slice_paper_into_sections import Section
 
 _HEADER_RE = re.compile(r"^(#{1,6})\s+(.*)$", re.MULTILINE)
+
+# Default layout: prepared papers under one root, comparisons under another.
+PAPERS_ROOT = Path("output") / "papers"
+COMPARISONS_ROOT = Path("output") / "comparisons"
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -54,6 +62,8 @@ def _build_parser() -> argparse.ArgumentParser:
     _add_brief(subparsers)
     _add_render(subparsers)
     _add_render_briefs(subparsers)
+    _add_prepare(subparsers)
+    _add_report(subparsers)
     _add_run(subparsers)
     return parser
 
@@ -233,8 +243,83 @@ def _cmd_render_briefs(args: argparse.Namespace) -> None:
         _write_text(args.out_dir / filename, html)
 
 
+def _add_prepare(subparsers) -> None:
+    parser = subparsers.add_parser(
+        "prepare", help="Run Stages 0, 2a, 2b and 2c on one paper, with no comparison"
+    )
+    parser.add_argument("paper_md", type=Path, help="one source paper, any extension")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        help=f"directory to write this paper's artifacts into (default: {PAPERS_ROOT}/<stem>)",
+    )
+    parser.set_defaults(handler=_cmd_prepare)
+
+
+def _cmd_prepare(args: argparse.Namespace) -> None:
+    if not args.paper_md.is_file():
+        raise SystemExit(
+            f"error: {args.paper_md} not found (looked relative to {Path.cwd()}). "
+            "Run from the paper_diff/ directory or pass an absolute path."
+        )
+    out_dir = args.out_dir or PAPERS_ROOT / args.paper_md.stem
+    paper_dir = run_pipeline.prepare_paper(args.paper_md, out_dir)
+    print(f"Prepared {args.paper_md} into {paper_dir}")
+
+
+def _add_report(subparsers) -> None:
+    parser = subparsers.add_parser(
+        "report", help="Run Stages 1, 3, 4, 4b, 5 and 5b on two prepared papers"
+    )
+    parser.add_argument(
+        "paper_a",
+        help=f"champion (incumbent): a prepared directory, or a bare name under {PAPERS_ROOT}",
+    )
+    parser.add_argument(
+        "paper_b",
+        help=f"challenger: a prepared directory, or a bare name under {PAPERS_ROOT}",
+    )
+    parser.add_argument(
+        "--name", help="name for this comparison (default: output_YYYYMMDDHHMMSS, local time)"
+    )
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        help=f"where to write the comparison (default: {COMPARISONS_ROOT}/<name>)",
+    )
+    parser.set_defaults(handler=_cmd_report)
+
+
+def _cmd_report(args: argparse.Namespace) -> None:
+    paper_a_dir = resolve_paper(args.paper_a)
+    paper_b_dir = resolve_paper(args.paper_b)
+    name = args.name or default_comparison_name()
+    out_dir = args.out_dir or COMPARISONS_ROOT / name
+    report_path = run_pipeline.compare_prepared(paper_a_dir, paper_b_dir, out_dir, name=name)
+    print(f"Wrote {report_path} and brief_*.html alongside it")
+
+
+def default_comparison_name(now: datetime | None = None) -> str:
+    """`output_YYYYMMDDHHMMSS` in local time. Which papers it holds is in `manifest.yaml`."""
+    return (now or datetime.now()).strftime("output_%Y%m%d%H%M%S")
+
+
+def resolve_paper(arg: str) -> Path:
+    """Turn a `report` argument into a prepared directory.
+
+    A path that exists on disk is used as given; otherwise the argument is
+    treated as a bare paper name under `PAPERS_ROOT`.
+    """
+    as_path = Path(arg)
+    if as_path.is_dir():
+        return as_path
+    return PAPERS_ROOT / arg
+
+
 def _add_run(subparsers) -> None:
-    parser = subparsers.add_parser("run", help="Run the full pipeline, Stage 0 through 5b")
+    parser = subparsers.add_parser(
+        "run", help="Run the full pipeline, Stage 0 through 5b (prepare both papers, then report)"
+    )
     parser.add_argument("paper_a_md", type=Path, help="the champion (incumbent) paper")
     parser.add_argument("paper_b_md", type=Path, help="the challenger paper")
     parser.add_argument("--out-dir", type=Path, default=Path("output"))
